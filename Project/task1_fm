@@ -2,8 +2,9 @@
 
 QUESTION 1
 
-#(A) Program to multiply two matrices using nested loops
-#(A) product of matrices
+
+#(A) Product of matrices
+
 X = [[1,2,3],
      [4 ,5,6],
      [7 ,8,9]]
@@ -11,60 +12,65 @@ X = [[1,2,3],
 Y = [[9,8,7],
      [6,5,4],
      [3,2,1]]
+
 def product_mat(mat1,mat2):
 
-    result = [[0,0,0],
+    res= [[0,0,0],
           [0,0,0],
           [0,0,0]]
+
     for i in range(len(mat1)):
        for j in range(len(mat2[0])):
          for k in range(len(mat2)):
-            result[i][j] += mat1[i][k] * mat2[k][j]
-    return result
+            res[i][j] += mat1[i][k] * mat2[k][j]
+    return res
 
-result1=product_mat(X,Y)
-print("the product is")
-for r1 in result1:
+res_1=product_mat(X,Y)
+print("The product is")
+for r1 in res_1:
  print(r1)
 
-#(B) transpose of matrices
+#(B) Transpose of matrices
+
 def transpose_mat(mat3):
-    result_transpose = [[0,0,0],
-                        [0,0,0],
-                         [0,0,0]]
+    res_transpose = [[0,0,0],
+                    [0,0,0],
+                    [0,0,0]]
     for i in range(len(mat3)):
        for j in range(len(mat3[0])):
-           result_transpose[j][i] = mat3[i][j]
+           res_transpose[j][i] = mat3[i][j]
 
-    return result_transpose
+    return res_transpose
 
 
-result2=transpose_mat(X)
-print("the transpose of X is")
-for r2 in result2:
+res_2=transpose_mat(X)
+print("The transpose of X is")
+for r2 in res_2:
     print(r2)
-result3=transpose_mat(Y)
-print("the transpose of Y is")
-for r3 in result3:
+res_3=transpose_mat(Y)
+print("The transpose of Y is")
+for r3 in res_3:
     print(r3)
-#(C)to prove (AB)^T=B^T*A^T
-result4=transpose_mat(result1)
-print("the transpose of product is")
-for r4 in result4:
+
+#(C) Prove (AB)^T=B^T*A^T
+
+res_4=transpose_mat(res_1)
+print("The transpose of product is")
+for r4 in res_4:
     print(r4)
 
 
-result5=product_mat(result3,result2)
-print("the product of Y^T*X^T is")
-for r5 in result5:
+res_5=product_mat(res_3,res_2)
+print("The product of Y^T*X^T is")
+for r5 in res_5:
     print(r5)
 
-result6=product_mat(result3,result2)
-print("the product of Y^T*X^T is")
-for r6 in result6:
+res_6=product_mat(res_3,res_2)
+print("The product of Y^T*X^T is")
+for r6 in res_6:
     print(r6)
 
-if result5==result6:
+if res_5==res_6:
     print("LHS=RHS")
 else:
     print("LHS not equal to RHS")
@@ -73,23 +79,18 @@ else:
 QUESTION 2
 
 
-test_tup = (1, 3, 5, 2, 3, 5, 1, 1, 3)
+org_tup = (1, 3, 5, 2, 3, 5, 1, 1, 3)
   
-# printing original tuple 
-print("The original tuple is : " + str(test_tup))
-  
-# Removing duplicates from tuple 
+print("The original tuple is : " + str(org_tup))
 
-res = tuple(set(test_tup))
-  
-# printing result
+
+res = tuple(set(org_tup))
+
 print("The tuple after removing duplicates : " + str(res))
 
-
-res1 = sum(list(res))
+res_1 = sum(list(res))
   
-# printing result 
-print("The summation of tuple elements are : " + str(res1)) 
+print("The summation of tuple elements are : " + str(res_1)) 
 
 
 
